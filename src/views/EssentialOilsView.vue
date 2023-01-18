@@ -54,7 +54,7 @@
   top: 30px;
   left: 30px;
   right: 30px;
-  max-width: 50rem;
+  max-width: 55rem;
   position: absolute;
 }
 .daniels_container {

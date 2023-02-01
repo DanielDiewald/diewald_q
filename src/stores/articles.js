@@ -1,8 +1,13 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
+import axios from 'axios';
 
-import articlesJson from '@/assets/data/articles.json';
-
-export const useArticleStore = defineStore('articles', () => {
-  const articles = articlesJson;
-  return { articles }
-})
+export const useArticleStore = defineStore('articles', {
+  state: () => ({ articles: [] }),
+  getters: {},
+  actions: {
+    async getArticles() {
+      const { data } = await axios.get('http://localhost:3000/articles');
+      this.articles = data;
+    },
+  },
+});

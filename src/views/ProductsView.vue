@@ -72,7 +72,8 @@ const filter = ref('');
 let show = ref(false);
 let selected = ref(null);
 
-onMounted(() => {
+onMounted(async () => {
+  await store.getProducts();
   products.value = store.product;
   console.log(products.value);
 });
